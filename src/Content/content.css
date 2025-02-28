@@ -1,0 +1,219 @@
+.main-content{
+}
+.descriptions{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 60px;
+    width: 25%;
+}
+.descriptions h1{
+    color: aliceblue;
+    z-index: 2;
+    margin-bottom: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 60px;
+    text-shadow: 3px 3px 5px gray;
+}
+.descriptions p{
+    margin-bottom: 50px;
+    color: rgba(215, 215, 215, 0.788);
+    z-index: 2;
+    text-align: justify;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.descriptions button{
+    width: 180px;
+    height: 45px;
+    z-index: 2;
+    background: none;
+    color: goldenrod;
+    border-color: goldenrod;
+    border: 2px solid;
+    transition: background 0.3s ease;
+    
+}
+.descriptions button:hover{
+    background: rgb(156, 118, 20);
+    color: rgba(255, 255, 255, 0.788);
+}
+.advice-coffee-box{
+    position: absolute;
+    top: 100vh;
+    width: 100%;
+    height: 65vh;
+    background-color: rgb(213, 217, 217);
+    text-align: center;
+    
+}
+.advice-coffee-box h3{
+    margin-top: 35px;
+}
+.advice-coffee-box .advice-paragraph{
+    margin-top: 40px;
+    opacity: 50%;
+}
+.advice-item{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+.advice-item p{
+    margin-top: 30px;
+}
+.advice-item a{
+    text-decoration: none;
+    color: blue;
+}
+.advice-item a:hover{
+    color: rgb(185, 2, 2);
+}
+.advice-item-1 img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px double darkred;
+    box-shadow: 4px 4px 5px;
+}
+.gallery-box{
+    position: absolute;
+    top: 165vh;
+    width: 100%;
+    height: 100vh;
+    /* background-color: rgba(213, 217, 217, 0.805); */
+    /* background: linear-gradient(to right, rgba(250, 197, 128, 0.95), rgba(35, 21, 3, 0.95)); */
+    background: radial-gradient(rgba(220, 176, 117, 0.95), rgba(165, 111, 44, 0.95));
+}
+.gallery-box h3{
+    text-align: center;
+    margin-top: 30px;
+}
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+    padding: 20px;
+}
+.gallery img{
+    width: 480px;
+    height: 280px;
+    border: 4px solid rgb(222, 222, 222);
+    box-shadow: 2px 2px 5px;
+}
+.about-caffee{
+    background-color: rgb(213, 217, 217);
+    position: absolute;
+    top: 265vh;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    padding: 50px;
+}
+.about-caffee img{
+    width: 600px;
+    height: 600px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+    mask-image: radial-gradient(ellipse 64% 59% at 65% 60%, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%);
+    border: 10px double;
+}
+.about-caffee .about-text{
+    position: absolute;
+    left: 8%;
+    top: 5%;
+    width: 700px;
+    padding: 50px;
+    font-size: 18px;
+    text-align: justify;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+#coffe-title{
+    margin-bottom: 40px;
+    font-size: 35px;
+    color: brown;
+    padding-bottom: 30px;
+    border-bottom: 3px solid;
+}
+.about-text .static{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 45px;
+    color: brown;
+    text-align: center;
+    font-weight: 700;
+}
+.customer-vote{
+    position: absolute;
+    display: flex;
+    top: 365vh;
+    width: 100%;
+    height: 50vh;
+    background-color: rgb(79, 46, 22);
+
+}
+.customer-vote h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    height: 100%;
+    color: bisque;
+    padding: 20px;
+    font-size: 27px;
+    border-left: 2px solid;
+}
+.cards-vote{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+}
+.cards-vote img{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 19%;
+    border-radius: 50%;
+    top: 4%;
+    border: 4px double;
+}
+.cards-vote h5{
+    margin-top: 20px;
+    font-weight: bolder;
+    color: bisque;
+}
+.cards-vote p{
+    padding: 0 20px;
+}
+.card-vote-1,.card-vote-2,.card-vote-3{
+    width: 300px;
+    height: 250px;
+    margin: 20px auto;
+    border-radius: 10px;
+    border: 5px double;
+    color: rgb(198, 183, 160);
+}
+.card-vote-2 img{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 45.3%;
+    border-radius: 50%;
+    top: 4%;
+    border: 4px double;
+}
+.card-vote-3 img{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 72%;
+    top: 4%;
+    border-radius: 50%;
+    border: 4px double;
+}
+

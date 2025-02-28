@@ -1,0 +1,105 @@
+.reserve-container{
+    background-color: #af9369;
+    height: 200vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+.reserve-container .reserve-box{
+    background-color: beige;
+    width: 80%;
+    border: 4px double;
+    border-radius: 20px;
+    padding: 20px 30px;
+    margin-top: 5vh;
+}
+.reserve-box .cart-message {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    direction: rtl;
+    width: 100%;
+    text-align: center;
+    padding: 10px 15px;
+    background: #ffeb3b;
+    color: #333;
+    font-weight: bold;
+    border-radius: 12px;
+    border: 1px solid #fbc02d;
+}
+.reserve-box .cart-message p{
+    padding-top: 10px;
+    margin-right: 25px;
+}
+.reserve-box .cart-message span{
+    color: rgb(0, 126, 0);
+}
+.reserve-box .cart-button {
+    padding: 8px 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+.reserve-box .cart-button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+.reserve-box .cart-button:active {
+    background: #004085;
+    transform: scale(0.95);
+}
+.reserve-box h1{
+    text-align: center;
+    background-color: rgb(236, 211, 157);
+    height: 55px;
+    border-radius: 15px;
+    width: 91%;
+    margin: auto;
+    box-shadow: 3px 3px 8px;
+    font-size: xx-large;
+    line-height: 50px;
+}
+.container-boxes{
+    direction: rtl;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 30px;
+}
+.container-boxes .img-box{
+    width: 80%;
+    /* background-color: tomato; */
+    padding: 20px;
+    text-align: center;
+}
+.img-box img{
+    width: 450px;
+    height: 460px;
+    border: 2px solid #4d3b20;
+    border-radius: 10px;
+    box-shadow: 1px 5px 8px;
+}
+.container-boxes .text-box{
+
+}
+.text-box h4{
+    margin: 10px 30px 40px 0;
+    color: rgb(231, 58, 58);
+}
+.text-box h2{
+    margin: 30px;
+}
+.text-box ol li{
+    margin: 10px 0;
+}
+.count{
+    margin: 20px;
+    padding: 10px;
+}
+.count input{
+    margin-right: 10px;
+    border-radius: 5px;
+    width: 80px;
+}

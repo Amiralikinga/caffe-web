@@ -1,0 +1,20 @@
+.app-bg{
+    height: 100vh;
+    width: 100%;
+    direction: rtl;
+    position: relative;
+    background-image: url('../images/Coffee-heart_iStock-681614794-scaled.jpg');
+    background-repeat: no-repeat;
+    /* background-position: left; */
+    background-size: cover;
+    z-index: 1;
+}
+.app-bg::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.8) 30%, transparent 120%);
+}

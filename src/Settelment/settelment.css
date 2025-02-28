@@ -1,0 +1,113 @@
+
+.settelment-container{
+    direction: rtl;
+    background-color: ivory;
+    height: 200vh;
+    padding: 10px;
+}
+.settelment-container h2{
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    background-color: seashell;
+    margin: 20px 100px;
+    border-radius: 5px;
+    padding: 10px;
+    border: 2px solid;
+    box-shadow: 1px 5px 8px;
+    color: #333;
+}
+.discount-code{
+    margin: 20px 100px;
+    padding: 10px;
+
+}
+.discount-code a{
+    text-decoration: none;
+}
+.settelment-detail-box{
+    /* padding: 20px; */
+    margin: 0 100px;
+}
+.settelment-detail-box h4, .complementary-description-box h4{
+    color: red;
+    margin: 0 15px 30px 0;
+}
+.informations{
+    font-size: 18px;
+    padding: 20px 30px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid;
+    border-radius: 10px;
+    box-shadow: 1px 2px 3px;
+}
+.informations label.required::before {
+    content: "* ";
+    color: red;
+    font-weight: bold;
+}
+.informations label{
+}
+.informations input{
+    margin: 15px 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+.informations input:focus{
+    background-color: rgb(229, 243, 228);
+}
+.complementary-description-box{
+    margin: 20px 100px;
+}
+.complementary-description-box textarea{
+    height: 120px;
+    width: 100%;
+    margin: 15px 5px;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 10px;
+    box-shadow: 1px 2px 4px;
+
+}
+.complementary-description-box h6{
+    margin-right: 20px;
+}
+.settelment-container .order{
+    margin: 50px 120px 30px 0;
+}
+.card{
+    margin: 20px 100px;
+    border: 1px solid;
+    border-radius: 10px;
+    box-shadow: 1px 2px 4px;
+}
+.card .custome-header-order{
+    background-color: aqua;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.card-header .product-name, .card-header .product-cost{
+    text-align: start;
+    padding: 5px;
+
+}
+.custome-body-order{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+.card-body .left-box{
+    display: flex;
+    align-items: center;
+}
+.custome-footer-order{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+
+}

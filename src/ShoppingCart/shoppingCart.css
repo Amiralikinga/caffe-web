@@ -1,0 +1,247 @@
+.shopping-cart-container{
+    background-color: rgb(196, 184, 220);
+    padding: 20px;
+}
+.shopping-cart-container h2{
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    background-color: seashell;
+    margin: 20px 80px;
+    border-radius: 5px;
+    padding: 10px;
+    border: 2px solid;
+    box-shadow: 1px 5px 8px;
+    color: #333;
+}
+.shopping-cart-container .card{
+    direction: rtl;
+    margin: 20px 80px;
+    box-shadow: 0px 5px 8px;
+}
+.card-header, .product{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr; /* تنظیم پنج ستون */
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+}
+.card .card-header p{
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: normal;
+}
+.product{
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+.product:last-child{
+    border: none;
+}
+.product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 20px;
+}
+.delete-btn {
+    background-color: white;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 11px;
+    cursor: pointer;
+    border-radius: 5px; 
+    transition: 0.05s;
+}
+.delete-btn:hover {
+    /* background-color: rgb(122, 0, 0); */
+    border: 2px solid red;
+    
+}
+.column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shopping-cart-container .card-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-footer .discount-code{
+    margin-right: 0;
+}
+.card-footer .discount-code input{
+    padding: 8px 10px;
+    border-radius: 5px;
+    margin-right: 4px;
+}
+.discount-code input:focus {
+    border: 2px solid orange !important; /* قرمز تیره */
+    outline: none;
+    transition: 0.3s;
+}
+.card-footer button{
+    padding: 10px 20px;
+    background-color: rgb(159, 91, 223);
+    color: #e8e8e8;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+.card-footer button:hover{
+    background-color: blueviolet;
+}
+.card-footer button:active{
+    background-color: rgb(12, 135, 63);
+}
+.total-cost{
+    width: 50%;
+    direction: rtl;
+    padding: 30px 40px;
+    margin-left: 45px;
+}
+.total-cost h3{
+    text-align: start;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #333;
+}
+.total-small, .total-all{
+    display: flex;
+    border: 1px solid;
+    margin-bottom: 5px;
+}
+.total-small-txt, .total-all-txt{
+    background-color: rgb(255, 255, 255);
+    width: 30%;
+    padding: 5px 20px 50px 0;
+    font-weight: bold;
+
+}
+.total-small-digit, .total-all-digit{
+    background-color: rgb(248, 247, 247);
+    width: 70%;
+    padding: 35px 20px 50px 0;
+    font-weight: bold;
+}
+.settelment{
+    width: 100%;
+    padding: 15px;
+    background-color: rgb(159, 91, 223);
+    color: #e8e8e8;
+    font-size: 18px;
+    font-weight: bold;
+}
+.settelment:hover{
+    background-color: blueviolet;
+}
+.settelment:active{
+    background-color: rgb(12, 135, 63);
+}
+.discount-code {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+}
+
+.discount-code input {
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.discount-code button {
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.discount-code button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+/* ✅ استایل هنگام وارد کردن کد تخفیف صحیح */
+.valid-code {
+    background-color: #d4edda !important; /* سبز روشن */
+    border-color: #28a745 !important; /* سبز پررنگ */
+}
+
+/* ❌ استایل هنگام وارد کردن کد تخفیف نادرست */
+.invalid-code {
+    border-color: #dc3545 !important; /* قرمز */
+    background-color: #f8d7da !important; /* صورتی کمرنگ */
+}
+
+/* پیام موفقیت‌آمیز */
+.success-message {
+    color: #28a745;
+    font-size: 14px;
+    margin: 5px 10px;
+    font-weight: bold;
+}
+
+/* پیام خطا */
+.error-message {
+    color: #dc3545;
+    font-size: 14px;
+    margin: 5px 10px;
+    font-weight: bold;
+}
+/* مقدار اولیه تخفیف */
+.total-discount {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    font-size: 17px;
+    color: #dc3545;
+}
+
+.total-discount-txt {
+    font-weight: bold;
+}
+
+.total-discount-digit {
+    font-weight: bold;
+}
+
+/* مقدار جدید بعد از تخفیف */
+.total-all-digit, .total-small-digit {
+    font-size: 20px;
+}
+/* استایل برای کل بخش "جمع کل" بعد از اعمال تخفیف */
+.discount-applied {
+    position: relative;
+}
+
+/* استایل نوار قرمز تخفیف */
+.discount-label {
+    position: absolute;
+    left: 0px;
+    /* top: 15%; */
+    /* transform: translateY(-50%); */
+    /* transform: rotate(-20deg); */
+    background-color: #dc3545; /* قرمز */
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 6px 10px;
+    /* border-radius: 5px; */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+
