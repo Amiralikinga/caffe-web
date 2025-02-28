@@ -42,6 +42,10 @@ const ShoppingCart = () => {
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
     }, []);
 
+    useEffect(() => {   //برای تست محتوای سبد خرید است کاربرد دیگری ندارد 
+        console.log("Cart Loaded:", cartItems);  
+    }, [cartItems]);
+
     const addToShoppingCart = ()=>{
         navigate('/reserve');
     }

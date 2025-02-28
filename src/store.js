@@ -1,12 +1,12 @@
 import { create } from "zustand";
 
 export const useCartStore = create((set) => ({
-    cartItems: [],
+    cartItems: JSON.parse(localStorage.getItem("cartItems")) || [], // بازیابی آیتم‌ها از `localStorage`
     showCartMessage: false,
-    totalCostBeforeDiscount: 0,
-    totalCostAfterDiscount: 0,
-    discountApplied: false, // آیا تخفیف اعمال شده؟
-    discountCode: "", // ذخیره مقدار کد تخفیف
+    totalCostBeforeDiscount: JSON.parse(localStorage.getItem("totalCostBeforeDiscount")) || 0, // بازیابی قیمت‌ها
+    totalCostAfterDiscount: JSON.parse(localStorage.getItem("totalCostAfterDiscount")) || 0,
+    discountApplied: JSON.parse(localStorage.getItem("discountApplied")) || false,
+    discountCode: localStorage.getItem("discountCode") || "",
 
     addToCart: (item) =>
         set((state) => {
@@ -43,6 +43,11 @@ export const useCartStore = create((set) => ({
                 totalAfterDiscount = totalBeforeDiscount; // اگر تخفیف اعمال نشده بود، قیمت کل برابر با قیمت قبل است
             }
 
+            // ذخیره قیمت‌ها و سبد خرید در `localStorage`
+            localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
+            localStorage.setItem("totalCostBeforeDiscount", JSON.stringify(totalBeforeDiscount));
+            localStorage.setItem("totalCostAfterDiscount", JSON.stringify(totalAfterDiscount));
+
             return {
                 ...state,
                 cartItems: updatedCartItems,
@@ -57,7 +62,11 @@ export const useCartStore = create((set) => ({
             set((state) => {
                 if (!state.discountApplied) {   
                     const discountedTotal = state.totalCostBeforeDiscount * 0.85; // 15٪ تخفیف
-    
+                    
+                    localStorage.setItem("totalCostAfterDiscount", JSON.stringify(discountedTotal));
+                    localStorage.setItem("discountApplied", JSON.stringify(true));
+                    localStorage.setItem("discountCode", code);
+
                     return {
                         totalCostAfterDiscount: discountedTotal,
                         discountApplied: true, // تخفیف یکبار اعمال شود
@@ -75,6 +84,13 @@ export const useCartStore = create((set) => ({
 
                 // اگر هیچ آیتمی در سبد نماند، مقدار را به آرایه خالی تنظیم کن
                 if (updatedCartItems.length === 0) {
+
+                    localStorage.removeItem("cartItems");
+                    localStorage.removeItem("totalCostBeforeDiscount");
+                    localStorage.removeItem("totalCostAfterDiscount");
+                    localStorage.removeItem("discountApplied");
+                    localStorage.removeItem("discountCode");
+
                     return {
                         cartItems: [],
                         totalCostBeforeDiscount: 0,
@@ -98,6 +114,11 @@ export const useCartStore = create((set) => ({
                 } else {
                     totalAfterDiscount = totalBeforeDiscount;
                 }
+
+                // ذخیره قیمت‌های جدید بعد از حذف آیتم
+                localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
+                localStorage.setItem("totalCostBeforeDiscount", JSON.stringify(totalBeforeDiscount));
+                localStorage.setItem("totalCostAfterDiscount", JSON.stringify(totalAfterDiscount));
     
                 return {
                     cartItems: updatedCartItems,
@@ -106,15 +127,23 @@ export const useCartStore = create((set) => ({
                 };
             }),
 
-    clearCart: () =>
-        set({
+    clearCart: () => {
+
+        localStorage.removeItem("cartItems");
+        localStorage.removeItem("totalCostBeforeDiscount");
+        localStorage.removeItem("totalCostAfterDiscount");
+        localStorage.removeItem("discountApplied");
+        localStorage.removeItem("discountCode");
+
+        return set({
             cartItems: [],
             totalCostBeforeDiscount: 0,
             totalCostAfterDiscount: 0,
             discountApplied: false,
             showCartMessage: false,
             discountCode: "", // پاک شدن مقدار کد تخفیف هنگام خالی شدن سبد خرید
-    }),
+    });
+    },
 
     hideCartMessage: () => set({ showCartMessage: false }),
 }));
