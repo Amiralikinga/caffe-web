@@ -10,6 +10,10 @@ const Settelment = () => {
     const {cartItems, totalCostBeforeDiscount, totalCostAfterDiscount, discountApplied} = useCartStore();
     const navigate = useNavigate();
 
+    const handleOrder = ()=>{
+        navigate('/pay');
+    }
+    
     const goToDiscountBox = (e)=>{
         e.preventDefault();  // جلوگیری از بارگذاری مجدد صفحه
         navigate('/cart', { state: { scrollToDiscount: true } });
@@ -95,7 +99,7 @@ const Settelment = () => {
                     <p className='cart-to-cart'>واریز از طریق کارت به کارت</p>
                     <hr />
                     <p><a href="#">سیاست حفظ حریم خصوصی</a> Your personal data will be used to process your order, support your experience throughout this website and for other purposes described in our.</p>
-                    <button className='confirm-btn'>ثبت سفارش</button>
+                    <button className='confirm-btn' onClick={handleOrder}>ثبت سفارش</button>
                 </div>
 
         </div>
