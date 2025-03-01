@@ -9,16 +9,17 @@ const ShoppingCart = () => {
     const {cartItems, removeFromCart, totalCostBeforeDiscount, totalCostAfterDiscount, applyDiscount, discountApplied, discountCode  } = useCartStore();
     
     const [localDiscountCode, setLocalDiscountCode] = useState(discountCode); // مقدار محلی برای نمایش در `input`
-    const [isValidCode, setIsValidCode] = useState(null);
+    const [inputClass, setInputClass] = useState('');
     const [isInputDisabled, setIsInputDisabled] = useState(discountApplied);
     const [isButtonDisabled, setIsButtonDisabled] = useState(discountApplied);
 
     const navigate = useNavigate();
+    const discountInputRef = useRef(null); // مرجع به اینپوت کد تخفیف
+    const location = useLocation();  //بررسی مسیر صفحه
+
 
     const validCodes = ["DISCOUNT50", "OFF100", "SALE2025"]; // لیست کدهای معتبر
 
-    const discountInputRef = useRef(null); // مرجع به اینپوت کد تخفیف
-    const location = useLocation();  //بررسی مسیر صفحه 
 
     useEffect(() => {
         // اگر از صفحه صورت‌حساب آمده باشیم، مستقیم به باکس تخفیف اسکرول کند
@@ -52,12 +53,12 @@ const ShoppingCart = () => {
 
     const handleApplyDiscount = ()=>{
         if(validCodes.includes(localDiscountCode.trim().toUpperCase())){
-            setIsValidCode(true);
+            setInputClass('valid-code');
             setIsInputDisabled(true);
             setIsButtonDisabled(true);
             applyDiscount(localDiscountCode); // ذخیره مقدار کد تخفیف در استور
         }else{
-            setIsValidCode(false);
+            setInputClass('invalid-code');
         }
     };
 
@@ -103,6 +104,7 @@ const ShoppingCart = () => {
                     )}
                 </div>
                 <div className="card-footer">
+                    <button onClick={addToShoppingCart}>افزودن به رزرو میز</button>
                     <div className="discount-code">
                         <button onClick={handleApplyDiscount} disabled={isButtonDisabled}>اعمال کد تخفیف</button>
                         <input
@@ -110,14 +112,14 @@ const ShoppingCart = () => {
                         type="text"
                         placeholder="کد تخفیف را وارد کنید"
                         value={localDiscountCode}
-                        onChange={(e) => setLocalDiscountCode(e.target.value)}
+                        onChange={(e) => {
+                            setLocalDiscountCode(e.target.value);
+                            setInputClass(''); // بازنشانی استایل هنگام تغییر مقدار
+                        }}
                         disabled={isInputDisabled}
-                        className={discountApplied ? 'valid-code' : ''}
+                        className={inputClass}
                         />
-                        {isValidCode === false && <p className="error-message">کد تخفیف نادرست است!</p>}
-                        {isValidCode === true && <p className="success-message">کد تخفیف با موفقیت اعمال شد!</p>}
                     </div>
-                    <button onClick={addToShoppingCart}>افزودن به رزرو میز</button>
                 </div>
             </div>
             <div className="total-cost">
@@ -130,7 +132,7 @@ const ShoppingCart = () => {
 
                 <div className={`total-all ${discountApplied ? 'discount-applied' : ''}`}>
                     <div className="total-all-txt">جمع کل :</div>
-                    {discountApplied && <div className="discount-label">15٪ تخفیف</div>}
+                    {discountApplied && <div className="discount-label fade-in-discount">15٪ تخفیف</div>}
                     <div className="total-all-digit">{totalCostAfterDiscount.toLocaleString()} تومان</div>
                 </div>
 

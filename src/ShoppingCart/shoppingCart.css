@@ -72,15 +72,10 @@
     align-items: center;
 }
 .card-footer .discount-code{
-    margin-right: 0;
-}
-.card-footer .discount-code input{
-    padding: 8px 10px;
-    border-radius: 5px;
-    margin-right: 4px;
+    margin-left: 0;
 }
 .discount-code input:focus {
-    border: 2px solid orange !important; /* قرمز تیره */
+    border: 2px solid orange !important;
     outline: none;
     transition: 0.3s;
 }
@@ -151,12 +146,10 @@
     gap: 6px;
 
 }
-
 .discount-code input {
     padding: 8px;
     border: 2px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;
     transition: 0.3s;
 }
 
@@ -235,13 +228,22 @@
     /* top: 15%; */
     /* transform: translateY(-50%); */
     /* transform: rotate(-20deg); */
-    background-color: #dc3545; /* قرمز */
+    background-color: #dc3545;
     color: white;
     font-size: 14px;
     font-weight: bold;
-    padding: 6px 10px;
-    /* border-radius: 5px; */
+    padding: 4px 20px 6px 10px;
+    border-radius: 0 0 50px 0;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.2); } /* محو و کمی کوچک */
+    50% { opacity: 0.5; transform: scale(1.02); } /* افزایش تدریجی اندازه */
+    100% { opacity: 1; transform: scale(1); } /* نمایش کامل */
+}
+.fade-in-discount {
+    opacity: 0; /* شروع در حالت محو */
+    animation: fadeIn 1.5s ease-out infinite; /* اجرای انیمیشن */
 }
 
 

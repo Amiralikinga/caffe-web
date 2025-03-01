@@ -1,9 +1,8 @@
 
 .settelment-container{
     direction: rtl;
-    background-color: ivory;
-    height: 200vh;
-    padding: 10px;
+    background-color: rgb(240, 254, 255);
+    padding: 10px 80px;
 }
 .settelment-container h2{
     text-align: center;
@@ -11,7 +10,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 40px;
     font-weight: bold;
-    background-color: seashell;
+    background-color: rgb(170, 248, 254);
     margin: 20px 100px;
     border-radius: 5px;
     padding: 10px;
@@ -28,7 +27,6 @@
     text-decoration: none;
 }
 .settelment-detail-box{
-    /* padding: 20px; */
     margin: 0 100px;
 }
 .settelment-detail-box h4, .complementary-description-box h4{
@@ -44,6 +42,7 @@
     border: 1px solid;
     border-radius: 10px;
     box-shadow: 1px 2px 3px;
+    
 }
 .informations label.required::before {
     content: "* ";
@@ -87,27 +86,92 @@
     box-shadow: 1px 2px 4px;
 }
 .card .custome-header-order{
-    background-color: aqua;
+    background-color: rgb(170, 248, 254);
     display: grid;
     grid-template-columns: 1fr 1fr;
+    border-radius: 10px 10px 0 0;
+    padding: 20px 10px;
 }
 .card-header .product-name, .card-header .product-cost{
     text-align: start;
     padding: 5px;
-
+    font-weight: bold;
 }
 .custome-body-order{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    border-bottom: 1px solid #ddd;
+}
+.alternate-bg {
+    background-color: #f8f9fa;
 }
 .card-body .left-box{
     display: flex;
     align-items: center;
 }
-.custome-footer-order{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-
+.card .custome-footer-order{
+    background-color: rgb(170, 248, 254);
+    padding-top: 15px;
+    border-radius: 0 0 10px 10px;
+}
+.custome-footer-order .cost-1, .custome-footer-order .cost-2{
+    display: flex;
+}
+.cost-1 p, .cost-2 p{
+    width: 50%;
+    font-weight: bold;
+}
+.cost-2 b, .cost-2 p{
+    color: red;
+}
+.cost-2 span{
+    background-color: rgb(255, 99, 78);
+    /* background-color: #dc3545; */
+    padding: 6px 22px 8px 5px;
+    border-radius: 0 0 50px 0;
+    position: absolute;
+    left: 0;
+    bottom: 3.75em;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.2); } /* محو و کمی کوچک */
+    50% { opacity: 0.5; transform: scale(1.02); } /* افزایش تدریجی اندازه */
+    100% { opacity: 1; transform: scale(1); } /* نمایش کامل */
+}
+.fade-in-discount {
+    opacity: 0; /* شروع در حالت محو */
+    animation: fadeIn 1.5s ease-out infinite; /* اجرای انیمیشن */
+}
+.order-confirm{
+    margin: 50px 100px;
+    border: 1px solid;
+    border-radius: 10px;
+    box-shadow: 1px 2px 4px;
+    padding: 20px 20px;
+}
+.order-confirm .cart-to-cart{
+    background-color: #f2f2f2;
+    padding: 15px;
+}
+.order-confirm h6{
+    display: inline;
+    margin: 0 10px;
+}
+.order-confirm .confirm-btn{
+    background-color: rgb(159, 91, 223);
+    color: #f8f9fa;
+    font-size: 19px;
+    font-weight: bold;
+    padding: 20px 30px;
+    width: 100%;
+    transition: 0.5s ease;
+}
+.confirm-btn:hover{
+    background-color: blueviolet;
+}
+.confirm-btn:active{
+    background-color: rgb(12, 135, 63);
 }
